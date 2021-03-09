@@ -217,13 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return await res.json();
     };
 
-    getResource('http://localhost:3000/menu')
+    /* getResource('http://localhost:3000/menu')
     .then(data => {
         data.forEach(({img, altimg, title, descr, price}) => {
             new MenuCard(img, altimg, title, descr, price, '.menu .container')
             .render();
         });
-    });
+    }); */
+    // получение данных с использованием библиотеки axios
+    axios.get('http://localhost:3000/menu')
+        .then(data => {
+            data.data.forEach(({img, altimg, title, descr, price}) => {
+              new MenuCard(img, altimg, title, descr, price, '.menu .container')
+              .render();
+            });
+        });
 
     // этот вариант используеться тогда когда один раз что-то нужно построить
     /* getResource('http://localhost:3000/menu')
@@ -331,8 +339,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
 
-    fetch('http://localhost:3000/menu')
+     fetch('http://localhost:3000/menu')
     .then(data => data.json())
-    .then(res => console.log(res));
+    .then(res => console.log(res)); 
 
 });

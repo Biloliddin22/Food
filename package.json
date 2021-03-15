@@ -18,5 +18,9 @@
   "homepage": "https://github.com/Biloliddin22/Food#readme",
   "devDependencies": {
     "json-server": "^0.16.3"
+  },
+  "dependencies": {
+    "webpack": "^5.25.1",
+    "webpack-cli": "^4.5.0"
   }
 }

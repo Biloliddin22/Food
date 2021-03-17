@@ -1,3 +1,6 @@
+require('es6-promise').polyfill();
+import 'nodelist-foreach-polyfill';
+
 import tabs from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
@@ -8,8 +11,10 @@ import slider from './modules/slider';
 import {openModal} from './modules/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 50000);
-    tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
+    const modalTimerId = setTimeout(
+        () => openModal('.modal', modalTimerId), 50000);
+    tabs('.tabheader__item', '.tabcontent', 
+         '.tabheader__items', 'tabheader__item_active');
     modal('[data-modal]', '.modal', modalTimerId);
     timer('.timer', '2021-03-31');
     cards();

@@ -12,14 +12,25 @@
   },
   "author": "Biloliddin",
   "license": "ISC",
+  "browserslist": [
+    "> 1%"
+  ],
   "bugs": {
     "url": "https://github.com/Biloliddin22/Food/issues"
   },
   "homepage": "https://github.com/Biloliddin22/Food#readme",
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.9.1",
     "json-server": "^0.16.3"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "es6-promise": "^4.2.8",
+    "nodelist-foreach-polyfill": "^1.2.0",
     "webpack": "^5.25.1",
     "webpack-cli": "^4.5.0"
   }

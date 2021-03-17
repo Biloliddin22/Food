@@ -23,29 +23,7 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
     const modalTrigger = document.querySelectorAll(triggerSelector),
           modal = document.querySelector(modalSelector);
     
-// мой вариант   
-    /* modalTrigger.forEach( item => {
-        item.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-    });
-    
-    modalCloseBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    }); */
-    
-// вариант учителя
-    
 
-    /* modalTrigger.forEach( btn => {
-        btn.addEventListener('click', () => {
-            modal.classList.add('show');
-            modal.classList.remove('hide');    
-            // modal.classList.toggle('show'); в варианте с toggle могут
-            произойти баги!
-            document.body.style.overflow = 'hidden';
-        });
-    }); */
 
     modalTrigger.forEach( btn => {
         btn.addEventListener('click', 

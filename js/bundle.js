@@ -71,8 +71,7 @@ function calc() {
         } else {
           sex = e.target.getAttribute('id');
           localStorage.setItem('sex', e.target.getAttribute('id'));
-        } // console.log(ratio, sex);
-
+        }
 
         elements.forEach(elem => {
           elem.classList.remove(activeClass);
@@ -81,20 +80,6 @@ function calc() {
         calcTotal();
       });
     });
-    /* document.querySelector(parentSelector)
-    .addEventListener('click', (e) => {
-        if (e.target.getAttribute('data-ratio')) {
-            ratio = +e.target.getAttribute('data-ratio');
-        } else {
-            sex = e.target.getAttribute('id');
-        }
-          console.log(ratio, sex);
-          elements.forEach(elem => {
-            elem.classList.remove(activeClass);
-        });
-          e.target.classList.add(activeClass);
-    }); */
-    // в этом подходе возникает баг
   }
 
   getStaticInformation('#gender div', 'calculating__choose-item_active');
@@ -203,39 +188,7 @@ function cards() {
     }) => {
       new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
     });
-  }); // получение данных с использованием библиотеки axios
-
-  /* axios.get('http://localhost:3000/menu')
-      .then(data => {
-          data.data.forEach(({img, altimg, title, descr, price}) => {
-            new MenuCard(img, altimg, title, descr, price, '.menu .container')
-            .render();
-          });
-      }); */
-  // этот вариант используеться тогда когда один раз что-то нужно построить
-
-  /* getResource('http://localhost:3000/menu')
-      .then(data => createCard(data));
-  
-  function createCard(data) {
-      data.forEach(({img, altimg, title, descr, price}) => {
-          const element = document.createElement('div');
-            element.classList.add('.menu__item');
-            element.innerHTML = `
-          <img src=${img} alt=${altimg}>
-          <h3 class="menu__item-subtitle">${title}</h3>
-          <div class="menu__item-descr">${descr}</div>
-          <div class="menu__item-divider"></div>
-          <div class="menu__item-price">
-              <div class="menu__item-cost">Цена:</div>
-              <div class="menu__item-total">
-                  <span>${price}</span> грн/день
-              </div>
-          </div>
-          `;
-            document.querySelector('.menu .container').append(element);
-      });
-  } */
+  });
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (cards);
@@ -310,10 +263,6 @@ function forms(formSelector, modalTimerId) {
       (0,_modal__WEBPACK_IMPORTED_MODULE_0__.closeModal)('.modal');
     }, 4000);
   }
-  /* fetch('http://localhost:3000/menu')
-  .then(data => data.json())
-  .then(res => console.log(res)); */
-
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (forms);
@@ -354,29 +303,7 @@ function closeModal(modalSelector) {
 function modal(triggerSelector, modalSelector, modalTimerId) {
   // Modal
   const modalTrigger = document.querySelectorAll(triggerSelector),
-        modal = document.querySelector(modalSelector); // мой вариант   
-
-  /* modalTrigger.forEach( item => {
-      item.addEventListener('click', () => {
-          modal.style.display = 'block';
-      });
-  });
-  
-  modalCloseBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-  }); */
-  // вариант учителя
-
-  /* modalTrigger.forEach( btn => {
-      btn.addEventListener('click', () => {
-          modal.classList.add('show');
-          modal.classList.remove('hide');    
-          // modal.classList.toggle('show'); в варианте с toggle могут
-          произойти баги!
-          document.body.style.overflow = 'hidden';
-      });
-  }); */
-
+        modal = document.querySelector(modalSelector);
   modalTrigger.forEach(btn => {
     btn.addEventListener('click', () => openModal(modalSelector, modalTimerId));
   });
@@ -435,40 +362,7 @@ function slider({
         slidesWrapper = document.querySelector(wrapper),
         slidesField = document.querySelector(field),
         width = window.getComputedStyle(slidesWrapper).width;
-  let slideIndex = 1; // это обычный слайдер
-
-  /* showSlides(slideIndex);
-    if (slides.length < 10) {
-      total.textContent = `0${slides.length}`;
-  } else {
-      total.textContent = slides.length;
-  }
-    function showSlides(n) {
-      if (n > slides.length) {
-          slideIndex = 1;
-      }
-        if (n < 1) {
-          slideIndex = slides.length;
-      }
-        slides.forEach(item => item.classList.add('hide'));
-        slides[slideIndex - 1].classList.remove('hide');
-      slides[slideIndex - 1].classList.add('show');
-        if (slides.length < 10) {
-          current.textContent = `0${slideIndex}`;
-      } else {
-          current.textContent = slideIndex;
-      }
-  }
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-  }
-    prev.addEventListener('click', () => {
-      plusSlides(-1);
-  });
-    next.addEventListener('click', () => {
-      plusSlides(1);
-  }); */
-  // продвинутый слайдер(карусель)
+  let slideIndex = 1; // продвинутый слайдер(карусель)
 
   let offset = 0;
 

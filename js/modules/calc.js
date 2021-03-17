@@ -69,7 +69,6 @@ function calc() {
                     localStorage.setItem('sex', e.target.getAttribute('id'));
                 }
 
-                // console.log(ratio, sex);
     
                 elements.forEach(elem => {
                     elem.classList.remove(activeClass);
@@ -79,22 +78,7 @@ function calc() {
                 calcTotal();
             });
         });
-        /* document.querySelector(parentSelector)
-        .addEventListener('click', (e) => {
-            if (e.target.getAttribute('data-ratio')) {
-                ratio = +e.target.getAttribute('data-ratio');
-            } else {
-                sex = e.target.getAttribute('id');
-            }
-
-            console.log(ratio, sex);
-
-            elements.forEach(elem => {
-                elem.classList.remove(activeClass);
-            });
-
-            e.target.classList.add(activeClass);
-        }); */ // в этом подходе возникает баг
+        
 
         
     }

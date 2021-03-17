@@ -14,48 +14,6 @@ function slider({container, slide, nextArrow, prevArrow,
 
     let slideIndex = 1;
 
-    // это обычный слайдер
-    /* showSlides(slideIndex);
-
-    if (slides.length < 10) {
-        total.textContent = `0${slides.length}`;
-    } else {
-        total.textContent = slides.length;
-    }
-
-    function showSlides(n) {
-        if (n > slides.length) {
-            slideIndex = 1;
-        }
-
-        if (n < 1) {
-            slideIndex = slides.length;
-        }
-
-        slides.forEach(item => item.classList.add('hide'));
-
-        slides[slideIndex - 1].classList.remove('hide');
-        slides[slideIndex - 1].classList.add('show');
-
-        if (slides.length < 10) {
-            current.textContent = `0${slideIndex}`;
-        } else {
-            current.textContent = slideIndex;
-        }
-    }
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    prev.addEventListener('click', () => {
-        plusSlides(-1);
-    });
-
-    next.addEventListener('click', () => {
-        plusSlides(1);
-    }); */
-
     // продвинутый слайдер(карусель)
     let offset = 0;
 
